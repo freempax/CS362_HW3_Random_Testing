@@ -27,18 +27,18 @@ class TestCase(unittest.TestCase):
         #     with self.subTest(case=i, length=length):
         #         credit_card_validator(s)
 
+    for i in range(total_cases):
+        r = random.randint(0, 1, 2)
+        if r == 0:
+            length = random.randint(10, 19)
+        elif r == 1:
+            length = random.choice(edge_cases)
+        else:
+            length = random.randint(0, 16)
 
-   for i in range(total_cases):
-            r = random.randint(0,1,2)
-            if r = 0:
-                length = random.randint(10, 19)
-            elif r = 1:
-                length = random.choice(edge_cases)
-            else:
-                length = random.randint(0,16)
+        p = random_digits(length)
+        credit_card_validator(p)
 
-            p = random_digits(length)
-            credit_card_validator(p)
 
 if __name__ == "__main__":
     unittest.main()
